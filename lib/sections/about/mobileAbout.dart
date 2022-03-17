@@ -92,20 +92,21 @@ class AboutMobile extends StatelessWidget {
           ),
           Row(
             children: [
-              for (int i = 0; i < 4; i++)
+              for (int i = 0; i < (kTools.length > 4 ? 4 : kTools.length); i++)
                 ToolTechWidget(
                   techName: kTools[i],
                 ),
             ],
           ),
-          Row(
-            children: [
-              for (int i = 4; i < 8; i++)
-                ToolTechWidget(
-                  techName: kTools[i],
-                ),
-            ],
-          ),
+          if (kTools.length > 4)
+            Row(
+              children: [
+                for (int i = 4; i < kTools.length; i++)
+                  ToolTechWidget(
+                    techName: kTools[i],
+                  ),
+              ],
+            ),
           SizedBox(
             height: height * 0.015,
           ),
