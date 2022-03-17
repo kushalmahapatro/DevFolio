@@ -17,23 +17,29 @@ class Footer extends StatelessWidget {
       width: width,
       color: _themeProvider.lightTheme ? Colors.white : Colors.grey[900],
       child: Center(
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
+        child: Wrap(
           children: [
             AdaptiveText(
-              "Developed in 💙 with ",
+              "Developed in ",
               style: GoogleFonts.montserrat(
                 fontWeight: FontWeight.w300,
                 color: _themeProvider.lightTheme ? Colors.black : Colors.white,
               ),
             ),
             InkWell(
-              onTap: () => launchURL("https://github.com/mhmzdev/DevFolio"),
+              onTap: () => launchURL("https://flutter.dev/"),
               child: Text(
                 "Flutter",
-                style: TextStyle(color: Colors.blue),
+                style: TextStyle(color: kPrimaryColor),
               ),
-            )
+            ),
+            AdaptiveText(
+              " with 💙",
+              style: GoogleFonts.montserrat(
+                fontWeight: FontWeight.w300,
+                color: _themeProvider.lightTheme ? Colors.black : Colors.white,
+              ),
+            ),
           ],
         ),
       ),

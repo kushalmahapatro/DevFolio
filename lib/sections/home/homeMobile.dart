@@ -30,8 +30,8 @@ class _HomeMobileState extends State<HomeMobile> {
             bottom: 0.0,
             right: -width * 0.25,
             child: Opacity(
-              opacity: 0.9,
-              child: Image.asset('assets/1.png', height: height * 0.65),
+              opacity: 0.6,
+              child: Image.asset('assets/pic-blur.png', height: height),
             ),
           ),
           Container(
@@ -61,7 +61,7 @@ class _HomeMobileState extends State<HomeMobile> {
                   height: height * 0.01,
                 ),
                 Text(
-                  "Muhammad",
+                  "Kushal",
                   style: GoogleFonts.montserrat(
                       fontSize: height * 0.055,
                       color: _themeProvider.lightTheme
@@ -71,7 +71,7 @@ class _HomeMobileState extends State<HomeMobile> {
                       letterSpacing: 1.1),
                 ),
                 Text(
-                  "Hamza",
+                  "Mahapatro",
                   style: GoogleFonts.montserrat(
                       color: _themeProvider.lightTheme
                           ? Colors.black

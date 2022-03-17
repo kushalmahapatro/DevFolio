@@ -67,8 +67,9 @@ class _ProjectCardState extends State<ProjectCard> {
                     width: 3.0,
                   )
                 : BorderSide(
-                    color:
-                        _themeProvider.lightTheme ? Colors.white : Colors.grey[900],
+                    color: _themeProvider.lightTheme
+                        ? Colors.white
+                        : Colors.grey[900],
                   ),
           ),
           boxShadow: isHover
@@ -153,17 +154,19 @@ class _ProjectCardState extends State<ProjectCard> {
                 SizedBox(
                   height: height * 0.01,
                 ),
-                AdaptiveText(
-                  widget.projectDescription,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.montserrat(
-                      fontSize: height * 0.015,
-                      letterSpacing: 2.0,
-                      color: _themeProvider.lightTheme
-                          ? Colors.black
-                          : Colors.white,
-                      fontWeight: FontWeight.w300,
-                      height: width >= 600 ? 2.0 : 1.2),
+                Expanded(
+                  child: AdaptiveText(
+                    widget.projectDescription,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.montserrat(
+                        fontSize: height * 0.015,
+                        letterSpacing: 2.0,
+                        color: _themeProvider.lightTheme
+                            ? Colors.black
+                            : Colors.white,
+                        fontWeight: FontWeight.w300,
+                        height: width >= 600 ? 2.0 : 1.2),
+                  ),
                 ),
                 SizedBox(
                   height: height * 0.01,

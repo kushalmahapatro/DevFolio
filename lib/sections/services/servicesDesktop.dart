@@ -124,17 +124,19 @@ class ServiceCardBackWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        AdaptiveText(
-          serviceDesc,
-          style: GoogleFonts.montserrat(
-            color: _themeProvider.lightTheme ? Colors.black : Colors.white,
-            fontSize: height * 0.015,
-            letterSpacing: 2.0,
-            fontWeight: FontWeight.w400,
-            height: width < 900 ? 1.5 : 1.8,
+        Expanded(
+          child: AdaptiveText(
+            serviceDesc,
+            style: GoogleFonts.montserrat(
+              color: _themeProvider.lightTheme ? Colors.black : Colors.white,
+              fontSize: height * 0.015,
+              letterSpacing: 2.0,
+              fontWeight: FontWeight.w400,
+              height: width < 900 ? 1.5 : 1.8,
+            ),
           ),
         ),
-        const SizedBox(height: 25.0),
+        /*  const SizedBox(height: 25.0),
         MaterialButton(
           hoverColor: kPrimaryColor.withAlpha(150),
           shape: RoundedRectangleBorder(
@@ -170,8 +172,8 @@ class ServiceCardBackWidget extends StatelessWidget {
           color:
               _themeProvider.lightTheme ? Colors.grey[400] : Colors.grey[100],
         ),
-        const SizedBox(height: 10.0),
-        SizedBox(
+        const SizedBox(height: 10.0), */
+        /* SizedBox(
           height: 40.0,
           width: 150.0,
           child: MaterialButton(
@@ -244,6 +246,7 @@ class ServiceCardBackWidget extends StatelessWidget {
             ),
           ),
         )
+       */
       ],
     );
   }

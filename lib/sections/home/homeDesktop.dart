@@ -23,7 +23,6 @@ class HomeDesktop extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            // top: width < 1200 ? height * 0.15 : height * 0.1,
             top: 0,
             right: width * 0.01,
             child: Opacity(
@@ -83,9 +82,6 @@ class HomeDesktop extends StatelessWidget {
                   "Mahapatro",
                   style: GoogleFonts.montserrat(
                       color: kPrimaryColor,
-                      //  _themeProvider.lightTheme
-                      //     ? Colors.black
-                      //     : Colors.white,
                       fontSize: width < 1200 ? height * 0.085 : height * 0.095,
                       fontWeight: FontWeight.w500,
                       letterSpacing: 5.0),

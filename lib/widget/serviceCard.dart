@@ -38,25 +38,61 @@ class _ServiceCardState extends State<ServiceCard> {
     final _themeProvider = Provider.of<ThemeProvider>(context);
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return InkWell(
-      onTap: () {},
-      onHover: (isHovering) {
-        if (isHovering) {
-          setState(() {
-            isHover = true;
-          });
+    return Container(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () {
           cardKey.currentState.toggleCard();
-        } else {
-          setState(() {
-            isHover = false;
-          });
-          cardKey.currentState.toggleCard();
-        }
-      },
-      child: FlipCard(
-        flipOnTouch: kIsWeb ? false : true,
-        key: cardKey,
-        back: Container(
+        },
+        onHover: (isHovering) {
+          if (isHovering) {
+            cardKey.currentState.toggleCard();
+            setState(() {
+              isHover = true;
+            });
+          } else {
+            cardKey.currentState.toggleCard();
+            setState(() {
+              isHover = false;
+            });
+          }
+        },
+        child: FlipCard(
+          flipOnTouch: kIsWeb ? false : true,
+          key: cardKey,
+          back: Container(
+              width: widget.cardWidth,
+              height: widget.cardHeight,
+              padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+              decoration: BoxDecoration(
+                color:
+                    _themeProvider.lightTheme ? Colors.white : Colors.grey[900],
+                border: Border(
+                  bottom: isHover
+                      ? BorderSide(
+                          color: kPrimaryColor,
+                          width: 3.0,
+                        )
+                      : BorderSide(),
+                ),
+                boxShadow: isHover
+                    ? [
+                        BoxShadow(
+                          color: kPrimaryColor.withAlpha(100),
+                          blurRadius: 12.0,
+                          offset: Offset(0.0, 0.0),
+                        )
+                      ]
+                    : [
+                        BoxShadow(
+                          color: Colors.black.withAlpha(100),
+                          blurRadius: 12.0,
+                          offset: Offset(0.0, 0.0),
+                        )
+                      ],
+              ),
+              child: widget.cardBack),
+          front: Container(
             width: widget.cardWidth,
             height: widget.cardHeight,
             padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
@@ -87,76 +123,46 @@ class _ServiceCardState extends State<ServiceCard> {
                       )
                     ],
             ),
-            child: widget.cardBack),
-        front: Container(
-          width: widget.cardWidth,
-          height: widget.cardHeight,
-          padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-          decoration: BoxDecoration(
-            color: _themeProvider.lightTheme ? Colors.white : Colors.grey[900],
-            border: Border(
-              bottom: isHover
-                  ? BorderSide(
-                      color: kPrimaryColor,
-                      width: 3.0,
-                    )
-                  : BorderSide(),
-            ),
-            boxShadow: isHover
-                ? [
-                    BoxShadow(
-                      color: kPrimaryColor.withAlpha(100),
-                      blurRadius: 12.0,
-                      offset: Offset(0.0, 0.0),
-                    )
-                  ]
-                : [
-                    BoxShadow(
-                      color: Colors.black.withAlpha(100),
-                      blurRadius: 12.0,
-                      offset: Offset(0.0, 0.0),
-                    )
-                  ],
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                widget.serviceIcon,
-                height: height * 0.125,
-              ),
-              SizedBox(
-                height: height * 0.02,
-              ),
-              Text(
-                widget.serviceTitle,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.montserrat(
-                  fontSize: height * 0.022,
-                  letterSpacing: 2.0,
-                  fontWeight: FontWeight.w500,
-                  color:
-                      _themeProvider.lightTheme ? Colors.black : Colors.white,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  widget.serviceIcon,
+                  height: height * 0.125,
                 ),
-              ),
-              // SizedBox(
-              //   height: height * 0.01,
-              // ),
-              // Expanded(
-              //   child: Text(
-              //     widget.serviceDescription,
-              //     textAlign: TextAlign.center,
-              //     style: GoogleFonts.montserrat(
-              //         color: _themeProvider.lightTheme
-              //             ? Colors.black
-              //             : Colors.white,
-              //         fontSize: height * 0.015,
-              //         letterSpacing: 2.0,
-              //         fontWeight: FontWeight.w200,
-              //         height: width < 900 ? 1.5 : 1.8),
-              //   ),
-              // )
-            ],
+                SizedBox(
+                  height: height * 0.02,
+                ),
+                Text(
+                  widget.serviceTitle,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.montserrat(
+                    fontSize: height * 0.022,
+                    letterSpacing: 2.0,
+                    fontWeight: FontWeight.w500,
+                    color:
+                        _themeProvider.lightTheme ? Colors.black : Colors.white,
+                  ),
+                ),
+                // SizedBox(
+                //   height: height * 0.01,
+                // ),
+                // Expanded(
+                //   child: Text(
+                //     widget.serviceDescription,
+                //     textAlign: TextAlign.center,
+                //     style: GoogleFonts.montserrat(
+                //         color: _themeProvider.lightTheme
+                //             ? Colors.black
+                //             : Colors.white,
+                //         fontSize: height * 0.015,
+                //         letterSpacing: 2.0,
+                //         fontWeight: FontWeight.w200,
+                //         height: width < 900 ? 1.5 : 1.8),
+                //   ),
+                // )
+              ],
+            ),
           ),
         ),
       ),

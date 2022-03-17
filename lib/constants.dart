@@ -3,6 +3,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 // Colors
 const Color kPrimaryColor = Color(0xffb5b35c);
+
+const String resumeUrl = "resumeUrl";
 // const Color kPrimaryColor = Color(0xff556b2f);
 
 // Social Media
@@ -30,15 +32,13 @@ void launchURL(String _url) async =>
 
 // Community
 final kCommunityLogo = [
-  'assets/cui.png',
-  'assets/flutterIsl.png',
-  'assets/dsc.png'
+  'assets/www-flutter.jpeg',
+  'assets/flutter-dev.jpeg',
 ];
 
 final kCommunityLinks = [
-  "https://www.comsats.edu.pk/",
-  "https://web.facebook.com/FlutterIslamabadPakistan/",
-  "https://dsc.community.dev/comsats-university-islamabad/"
+  "https://www.linkedin.com/groups/8833665/",
+  "https://www.linkedin.com/groups/10408911/",
 ];
 
 // Tools & Tech

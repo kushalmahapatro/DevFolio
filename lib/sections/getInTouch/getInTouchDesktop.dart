@@ -424,7 +424,7 @@ class _GetInTouchDesktopState extends State<GetInTouchDesktop> {
                                     btnText: "Send",
                                     onPressed: () {
                                       launchURL(
-                                          "mailto:hamza.6.shakeel@gmail.com?subject=SOMESUBJECT&body=SOMEMSG");
+                                          "mailto:mahapatro.kushal@gmail.com?subject=SOMESUBJECT&body=SOMEMSG");
                                     },
                                   ),
                                 )

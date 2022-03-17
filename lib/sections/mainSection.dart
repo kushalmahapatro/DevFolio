@@ -30,7 +30,7 @@ class _MainPageState extends State<MainPage> {
     "HOME",
     "ABOUT",
     "SERVICES",
-    "PROJECTS",
+    // "PROJECTS",
     "CONTACT"
   ];
 
@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
     Icons.person,
     Icons.settings,
     Icons.build,
-    Icons.article,
+    // Icons.article,
     Icons.phone,
   ];
 
@@ -66,9 +66,10 @@ class _MainPageState extends State<MainPage> {
       return About();
     } else if (i == 2) {
       return Services();
-    } else if (i == 3) {
+    } /* else if (i == 3) {
       return Portfolio();
-    } else if (i == 4) {
+     }*/
+    else if (i == 4) {
       return Contact();
     } else if (i == 5) {
       return Footer();
@@ -236,9 +237,7 @@ class _MainPageState extends State<MainPage> {
                   borderRadius: BorderRadius.circular(5.0),
                   side: BorderSide(color: kPrimaryColor)),
               onPressed: () {
-                html.window.open(
-                    'https://drive.google.com/file/d/1GF-wtbu2ob_Uxhw2In2QA8QiYi3XjCj1/view?usp=sharing',
-                    "pdf");
+                html.window.open(resumeUrl, "resume");
               },
               child: Text(
                 "RESUME",
@@ -365,15 +364,3 @@ class SectionsBody extends StatelessWidget {
     );
   }
 }
-
-// onPointerSignal: (ps) {
-//           if (ps is PointerScrollEvent) {
-//             final newOffset = scrollController.offset + ps.scrollDelta.dy;
-//             if (ps.scrollDelta.dy.isNegative) {
-//               scrollController.jumpTo(math.max(0, newOffset));
-//             } else {
-//               scrollController.jumpTo(math.min(
-//                   scrollController.position.maxScrollExtent, newOffset));
-//             }
-//           }
-//         },
