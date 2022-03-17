@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // Colors
-const Color kPrimaryColor = Color(0xffC0392B);
+const Color kPrimaryColor = Color(0xffb5b35c);
+// const Color kPrimaryColor = Color(0xff556b2f);
 
 // Social Media
 const kSocialIcons = [
@@ -15,12 +16,12 @@ const kSocialIcons = [
 ];
 
 const kSocialLinks = [
-  "https://facebook.com/mhmzdev",
-  "https://instagram.com/mhmzdev",
-  "https://twitter.com/mhmzdev",
-  "https://linkedin.com/in/mhmzdev",
-  "https://github.com/mhmzdev",
-  "https://mhamzadev.medium.com"
+  "https://facebook.com/kushalm.xyz",
+  "https://www.instagram.com/half_seas_over__",
+  "https://twitter.com/__kushal___",
+  "https://www.linkedin.com/in/kushal-mahapatro/",
+  "https://github.com/kushalmahapatro",
+  "https://medium.com/@kushal_"
 ];
 
 // URL Launcher
@@ -41,16 +42,7 @@ final kCommunityLinks = [
 ];
 
 // Tools & Tech
-final kTools = [
-  "Flutter",
-  "Dart",
-  "Python",
-  "Java",
-  "C++",
-  "HTML",
-  "CSS",
-  "Bootstrap"
-];
+final kTools = ["Flutter", "Dart", "R", "Java", "Photoshop", "Sketch"];
 
 // services
 final kServicesIcons = [
@@ -167,7 +159,7 @@ final kContactTitles = [
 ];
 
 final kContactDetails = [
-  "Attock, Pakistan",
-  "(+92) 346 0159889",
-  "hamza@mhmz.dev"
+  "Dubai, UAE",
+  "(+971) 521104369",
+  "mahapatro.kushal@gmail.com"
 ];

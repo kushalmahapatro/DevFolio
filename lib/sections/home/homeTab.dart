@@ -6,6 +6,8 @@ import 'package:folio/widget/socialMediaIcon.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import 'home.dart';
+
 class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -79,21 +81,7 @@ class HomeTab extends StatelessWidget {
                       Icons.play_arrow_rounded,
                       color: kPrimaryColor,
                     ),
-                    TyperAnimatedTextKit(
-                        isRepeatingAnimation: true,
-                        speed: Duration(milliseconds: 50),
-                        textStyle: GoogleFonts.montserrat(
-                          fontSize: height * 0.03,
-                          fontWeight: FontWeight.w200,
-                          color: _themeProvider.lightTheme
-                              ? Colors.black
-                              : Colors.white,
-                        ),
-                        text: [
-                          " Flutter Developer",
-                          " Technical Writer",
-                          " UI/UX Enthusiast"
-                        ]),
+                    getAnimatedText(height, context)
                   ],
                 ),
                 SizedBox(

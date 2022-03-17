@@ -202,7 +202,7 @@ class ServiceCardBackWidget extends StatelessWidget {
                           CustomFilledBtn(
                             height: 40.0,
                             onPressed: () =>
-                                launchURL("https://wa.me/?text=Hi Hamza!"),
+                                launchURL("https://wa.me/?text=Hi Kushal!"),
                             btnColor: Color(0xff34CB62),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
