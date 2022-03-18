@@ -288,27 +288,6 @@ class _GetInTouchDesktopState extends State<GetInTouchDesktop> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 8.0),
-                  _projectType == "Flutter - Mobile Development"
-                      ? Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.info_outline_rounded,
-                              color: kPrimaryColor,
-                              size: 20.0,
-                            ),
-                            const SizedBox(width: 8.0),
-                            AdaptiveText(
-                              "I don't have MacBook so I can only develop apps for Android.",
-                              style: TextStyle(
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.black
-                                      : Colors.white),
-                            )
-                          ],
-                        )
-                      : Container(),
                   const SizedBox(height: 50.0),
                   Row(
                     children: [
@@ -424,8 +403,17 @@ class _GetInTouchDesktopState extends State<GetInTouchDesktop> {
                                   child: OutlinedCustomBtn(
                                     btnText: "Send",
                                     onPressed: () {
-                                      launchURL(
-                                          "mailto:mahapatro.kushal@gmail.com?subject=SOMESUBJECT&body=SOMEMSG");
+                                      final String subject =
+                                          "New Project Request";
+                                      final String message =
+                                          "Project: $_projectType\n"
+                                          "Estimated Budget: $_estBudget\n"
+                                          "Project Duration: $_projectDuration\n"
+                                          "Message: ${_msgController.text}";
+                                      final String url = Uri.encodeFull(
+                                          "mailto:mahapatro.kushal@gmail.com?subject=$subject&body=$message");
+
+                                      launchURL(url);
                                     },
                                   ),
                                 )

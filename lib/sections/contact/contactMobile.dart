@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:folio/constants.dart';
 import 'package:folio/provider/themeProvider.dart';
+import 'package:folio/widget/customBtn.dart';
 import 'package:folio/widget/customTextHeading.dart';
 import 'package:folio/widget/projectCard.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,6 +41,12 @@ class ContactMobileTab extends StatelessWidget {
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 enableInfiniteScroll: false),
           ),
+          const SizedBox(
+            height: 10.0,
+          ),
+          OutlinedCustomBtn(
+              btnText: "Let's Work Together",
+              onPressed: () => Navigator.pushNamed(context, '/workTogether')),
         ],
       ),
     );

@@ -65,12 +65,9 @@ class _MainPageState extends State<MainPage> {
       return About();
     } else if (i == 2) {
       return Services();
-    } /* else if (i == 3) {
-      return Portfolio();
-     }*/
-    else if (i == 4) {
+    } else if (i == 3) {
       return Contact();
-    } else if (i == 5) {
+    } else if (i == 4) {
       return Footer();
     } else {
       return Container();
