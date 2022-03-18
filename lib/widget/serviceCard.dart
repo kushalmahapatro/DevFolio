@@ -10,15 +10,15 @@ import 'package:url_launcher/url_launcher.dart';
 class ServiceCard extends StatefulWidget {
   final String serviceIcon;
   final String serviceTitle;
-  final String serviceDescription;
-  final String serviceLink;
-  final double cardWidth;
-  final double cardHeight;
-  final Widget cardBack;
+  final String? serviceDescription;
+  final String? serviceLink;
+  final double? cardWidth;
+  final double? cardHeight;
+  final Widget? cardBack;
 
   const ServiceCard({
-    @required this.serviceIcon,
-    this.serviceTitle,
+    required this.serviceIcon,
+    required this.serviceTitle,
     this.serviceDescription,
     this.serviceLink,
     this.cardHeight,
@@ -42,16 +42,18 @@ class _ServiceCardState extends State<ServiceCard> {
       color: Colors.transparent,
       child: InkWell(
         onTap: () {
-          cardKey.currentState.toggleCard();
+          if (cardKey.currentState != null) cardKey.currentState!.toggleCard();
         },
         onHover: (isHovering) {
           if (isHovering) {
-            cardKey.currentState.toggleCard();
+            if (cardKey.currentState != null)
+              cardKey.currentState!.toggleCard();
             setState(() {
               isHover = true;
             });
           } else {
-            cardKey.currentState.toggleCard();
+            if (cardKey.currentState != null)
+              cardKey.currentState!.toggleCard();
             setState(() {
               isHover = false;
             });

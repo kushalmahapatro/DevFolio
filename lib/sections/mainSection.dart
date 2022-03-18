@@ -9,7 +9,6 @@ import 'package:folio/sections/about/about.dart';
 import 'package:folio/sections/contact/contact.dart';
 import 'package:folio/sections/home/home.dart';
 import 'package:folio/sections/navBar/navBarLogo.dart';
-import 'package:folio/sections/portfolio/portfolio.dart';
 import 'package:folio/sections/services/services.dart';
 import 'package:folio/widget/arrowOnTop.dart';
 import 'package:folio/widget/footer.dart';
@@ -200,7 +199,7 @@ class _MainPageState extends State<MainPage> {
           );
   }
 
-  Widget _appBarTabDesktop(ThemeProvider _themeProv) {
+  PreferredSizeWidget _appBarTabDesktop(ThemeProvider _themeProv) {
     return AppBar(
       elevation: 0.0,
       backgroundColor: _themeProv.lightTheme ? Colors.white : Colors.black,
@@ -345,10 +344,10 @@ class SectionsBody extends StatelessWidget {
   final Widget Function(int) sectionWidget;
 
   const SectionsBody({
-    Key key,
-    this.scrollController,
-    this.sectionsLength,
-    this.sectionWidget,
+    required this.scrollController,
+    required this.sectionsLength,
+    required this.sectionWidget,
+    Key? key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

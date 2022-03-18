@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 
 class AdaptiveText extends StatelessWidget {
   final String text;
-  final TextStyle style;
-  final TextAlign textAlign;
+  final TextStyle? style;
+  final TextAlign? textAlign;
 
-  AdaptiveText(this.text, {Key key, this.style, this.textAlign})
-      : super(key: key);
+  AdaptiveText(
+    this.text, {
+    this.style,
+    this.textAlign,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,10 @@
 {
-    "name": "Hamza",
-    "short_name": "Hamza",
+    "name": "Kushal",
+    "short_name": "Kushal",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#000000",
-    "theme_color": "#0175C2",
+    "theme_color": "#b5b35c",
     "description": "Live portfolio using flutter 2.0",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,

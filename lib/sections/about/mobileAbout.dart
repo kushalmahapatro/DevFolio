@@ -75,7 +75,7 @@ class AboutMobile extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               border: Border(
-                bottom: BorderSide(color: Colors.grey[900], width: 1.0),
+                bottom: BorderSide(color: Colors.grey.shade900, width: 1.0),
               ),
             ),
           ),
@@ -113,7 +113,7 @@ class AboutMobile extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               border: Border(
-                bottom: BorderSide(color: Colors.grey[900], width: 1.0),
+                bottom: BorderSide(color: Colors.grey.shade900, width: 1.0),
               ),
             ),
           ),
@@ -151,7 +151,8 @@ class AboutMobile extends StatelessWidget {
                   width: width * 0.2,
                   decoration: BoxDecoration(
                     border: Border(
-                      bottom: BorderSide(color: Colors.grey[900], width: 2.0),
+                      bottom:
+                          BorderSide(color: Colors.grey.shade900, width: 2.0),
                     ),
                   ),
                 ),

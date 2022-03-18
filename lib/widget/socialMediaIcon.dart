@@ -10,7 +10,10 @@ class SocialMediaIconBtn extends StatelessWidget {
   final double horizontalPadding;
 
   SocialMediaIconBtn(
-      {this.icon, this.socialLink, this.height, this.horizontalPadding});
+      {required this.icon,
+      required this.socialLink,
+      required this.height,
+      required this.horizontalPadding});
   @override
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);

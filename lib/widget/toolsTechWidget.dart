@@ -7,7 +7,10 @@ import 'package:provider/provider.dart';
 class ToolTechWidget extends StatelessWidget {
   final String techName;
 
-  const ToolTechWidget({Key key, this.techName}) : super(key: key);
+  const ToolTechWidget({
+    required this.techName,
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);

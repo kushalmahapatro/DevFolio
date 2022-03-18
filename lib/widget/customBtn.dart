@@ -6,11 +6,13 @@ import 'package:provider/provider.dart';
 
 class OutlinedCustomBtn extends StatelessWidget {
   final String btnText;
-  final Function onPressed;
+  final Function() onPressed;
 
-  const OutlinedCustomBtn(
-      {Key key, @required this.btnText, @required this.onPressed})
-      : super(key: key);
+  const OutlinedCustomBtn({
+    required this.btnText,
+    required this.onPressed,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,19 +35,19 @@ class OutlinedCustomBtn extends StatelessWidget {
 }
 
 class CustomFilledBtn extends StatelessWidget {
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
   final Widget child;
-  final Function onPressed;
-  final Color btnColor;
-  const CustomFilledBtn(
-      {Key key,
-      this.height,
-      this.btnColor,
-      this.width = 200.0,
-      this.onPressed,
-      this.child})
-      : super(key: key);
+  final Function() onPressed;
+  final Color? btnColor;
+  const CustomFilledBtn({
+    required this.height,
+    required this.onPressed,
+    required this.child,
+    this.btnColor,
+    this.width = 200.0,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 // Colors
 const Color kPrimaryColor = Color(0xffb5b35c);
 
-const String resumeUrl = "resumeUrl";
+const String resumeUrl =
+    "https://drive.google.com/file/d/1vbVuLlFSoOdCK0OJj5Cc17xSbLLQVKVn/view";
 // const Color kPrimaryColor = Color(0xff556b2f);
 
 // Social Media

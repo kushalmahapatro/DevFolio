@@ -1,6 +1,4 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:folio/constants.dart';
 import 'package:folio/provider/themeProvider.dart';
 import 'package:folio/widget/socialMediaIcon.dart';
@@ -73,9 +71,7 @@ class _HomeMobileState extends State<HomeMobile> {
                 Text(
                   "Mahapatro",
                   style: GoogleFonts.montserrat(
-                      color: _themeProvider.lightTheme
-                          ? Colors.black
-                          : Colors.white,
+                      color: kPrimaryColor,
                       fontSize: height * 0.055,
                       fontWeight: FontWeight.w500),
                 ),

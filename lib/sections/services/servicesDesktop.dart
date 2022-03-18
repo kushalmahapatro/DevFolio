@@ -1,14 +1,10 @@
 import 'package:flip_card/flip_card.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:folio/animations/bottomAnimation.dart';
 import 'package:folio/provider/themeProvider.dart';
-import 'package:folio/sections/serviceDetails/serviceDetails.dart';
 import 'package:folio/widget/adaptiveText.dart';
-import 'package:folio/widget/customBtn.dart';
 import 'package:folio/widget/customTextHeading.dart';
 import 'package:folio/widget/serviceCard.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:folio/constants.dart';
 import 'package:provider/provider.dart';
@@ -104,12 +100,12 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
 
 class ServiceCardBackWidget extends StatelessWidget {
   const ServiceCardBackWidget(
-      {Key key,
-      @required ThemeProvider themeProvider,
-      @required this.height,
-      @required this.width,
-      this.serviceDesc,
-      this.serviceTitle})
+      {required ThemeProvider themeProvider,
+      required this.height,
+      required this.width,
+      required this.serviceDesc,
+      required this.serviceTitle,
+      Key? key})
       : _themeProvider = themeProvider,
         super(key: key);
 
@@ -251,31 +247,3 @@ class ServiceCardBackWidget extends StatelessWidget {
     );
   }
 }
-
-/*Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              InkWell(
-                                onTap: () => launchURL(kServicesLinks[0]),
-                                child: Image.asset(
-                                  'assets/services/fiverr.png',
-                                  height: 25.0,
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.black
-                                      : Colors.green,
-                                ),
-                              ),
-                              const SizedBox(width: 30.0),
-                              InkWell(
-                                onTap: () => launchURL(
-                                    "https://www.upwork.com/freelancers/~0197b0f6aaeba9675f"),
-                                child: Image.network(
-                                  "https://img.icons8.com/ios-filled/50/000000/upwork.png",
-                                  height: 33.0,
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.black
-                                      : Colors.green,
-                                ),
-                              ),
-                            ],
-                          )*/

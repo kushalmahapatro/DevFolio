@@ -14,9 +14,9 @@ class Animator extends StatefulWidget {
 
 class _AnimatorState extends State<Animator>
     with SingleTickerProviderStateMixin {
-  Timer timer;
-  AnimationController animationController;
-  Animation animation;
+  Timer? timer;
+  late AnimationController animationController;
+  late Animation animation;
 
   @override
   void initState() {
@@ -32,7 +32,7 @@ class _AnimatorState extends State<Animator>
   void dispose() {
     animationController.dispose();
     super.dispose();
-    timer.cancel();
+    if (timer != null) timer!.cancel();
   }
 
   @override
@@ -40,11 +40,11 @@ class _AnimatorState extends State<Animator>
     return AnimatedBuilder(
       animation: animation,
       child: widget.child,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return Opacity(
-          opacity: animation.value,
+          opacity: animation.value ?? 1,
           child: Transform.translate(
-            offset: Offset(0.0, -50 + animation.value * 50),
+            offset: Offset(0.0, (-50 + (animation.value ?? 1) * 50) as double),
             child: child,
           ),
         );
@@ -53,11 +53,11 @@ class _AnimatorState extends State<Animator>
   }
 }
 
-Timer timer;
+Timer? timer;
 Duration duration = Duration();
 
 wait() {
-  if (timer == null || !timer.isActive) {
+  if (timer == null || !(timer?.isActive ?? false)) {
     timer = Timer(Duration(microseconds: 120), () {
       duration = Duration();
     });
@@ -69,7 +69,7 @@ wait() {
 class WidgetAnimator extends StatelessWidget {
   final Widget child;
 
-  WidgetAnimator({this.child});
+  WidgetAnimator({required this.child});
 
   @override
   Widget build(BuildContext context) {

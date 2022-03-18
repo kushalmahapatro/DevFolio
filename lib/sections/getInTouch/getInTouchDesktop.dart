@@ -61,7 +61,7 @@ class _GetInTouchDesktopState extends State<GetInTouchDesktop> {
 
   launchMailTo() async {
     final mailToLink = Mailto(
-      to: ["hamza.6.shakeel@gmil.com"],
+      to: ["mahapatro.kushal@gmil.com"],
       subject: _projectType,
       body: _msgController.text.isEmpty
           ? "Some message here"
@@ -157,9 +157,9 @@ class _GetInTouchDesktopState extends State<GetInTouchDesktop> {
                                   iconEnabledColor: Colors.black,
                                   value: _projectType,
                                   isExpanded: true,
-                                  onChanged: (value) {
+                                  onChanged: (String? value) {
                                     setState(() {
-                                      _projectType = value;
+                                      if (value != null) _projectType = value;
                                     });
                                   },
                                   items: projectType
@@ -209,9 +209,9 @@ class _GetInTouchDesktopState extends State<GetInTouchDesktop> {
                                   iconEnabledColor: Colors.black,
                                   value: _database,
                                   isExpanded: true,
-                                  onChanged: (value) {
+                                  onChanged: (String? value) {
                                     setState(() {
-                                      _database = value;
+                                      if (value != null) _database = value;
                                     });
                                   },
                                   items: database
@@ -261,9 +261,9 @@ class _GetInTouchDesktopState extends State<GetInTouchDesktop> {
                                   iconEnabledColor: Colors.black,
                                   value: _estBudget,
                                   isExpanded: true,
-                                  onChanged: (value) {
+                                  onChanged: (String? value) {
                                     setState(() {
-                                      _estBudget = value;
+                                      if (value != null) _estBudget = value;
                                     });
                                   },
                                   items: estBudget
@@ -338,9 +338,10 @@ class _GetInTouchDesktopState extends State<GetInTouchDesktop> {
                                   iconEnabledColor: Colors.black,
                                   value: _projectDuration,
                                   isExpanded: true,
-                                  onChanged: (value) {
+                                  onChanged: (String? value) {
                                     setState(() {
-                                      _projectDuration = value;
+                                      if (value != null)
+                                        _projectDuration = value;
                                     });
                                   },
                                   items: projectDuration

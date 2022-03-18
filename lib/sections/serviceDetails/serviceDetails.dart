@@ -7,7 +7,11 @@ class ServiceDetails extends StatelessWidget {
   final String dec;
   final String title;
 
-  const ServiceDetails({Key key, this.dec, this.title}) : super(key: key);
+  const ServiceDetails({
+    required this.dec,
+    required this.title,
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(

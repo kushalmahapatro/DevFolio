@@ -45,7 +45,10 @@ class _MyAppState extends State<MyApp> {
         routes: {
           "/": (context) => MainPage(),
           "/workTogether": (context) => GetInTouch(),
-          "/details": (context) => ServiceDetails()
+          "/details": (context) => ServiceDetails(
+                title: "",
+                dec: "",
+              )
         },
       ),
     );

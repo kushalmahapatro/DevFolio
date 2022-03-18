@@ -14,8 +14,11 @@ class ServiceDetailsDesktop extends StatelessWidget {
   final String serviceTitle;
   final String details;
 
-  const ServiceDetailsDesktop({Key key, this.details, this.serviceTitle})
-      : super(key: key);
+  const ServiceDetailsDesktop({
+    required this.details,
+    required this.serviceTitle,
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);
@@ -39,8 +42,10 @@ class ServiceDetailsDescription extends StatelessWidget {
   final String serviceTitle;
   final String desc;
 
-  const ServiceDetailsDescription({Key key, this.desc, this.serviceTitle})
+  const ServiceDetailsDescription(
+      {required this.desc, required this.serviceTitle, Key? key})
       : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);

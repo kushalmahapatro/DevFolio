@@ -6,7 +6,12 @@ class CommunityIconBtn extends StatelessWidget {
   final String link;
   final double height;
 
-  const CommunityIconBtn({Key key, this.icon, this.link, this.height});
+  const CommunityIconBtn({
+    required this.icon,
+    required this.link,
+    required this.height,
+    Key? key,
+  });
   @override
   Widget build(BuildContext context) {
     return Padding(
